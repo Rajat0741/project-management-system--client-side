@@ -8,6 +8,7 @@ import Header from "@/components/shared/Header";
 import { DotBackground } from "@/components/ui/DotBackground";
 import ErrorPage from "@/components/shared/ErrorPage";
 import NotFoundPage from "@/components/shared/NotFoundPage";
+import { useColdStartToast } from "@/hooks/useColdStartToast";
 
 // Extend AuthState to include queryClient
 interface RouterContext extends AuthState {
@@ -34,6 +35,7 @@ const RootLayout = () => {
   const { queryClient } = Route.useRouteContext();
   const location = useLocation();
   const isIndexPage = location.pathname === "/";
+  useColdStartToast();
 
   return (
     <QueryClientProvider client={queryClient}>
