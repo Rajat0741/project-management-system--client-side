@@ -1,6 +1,5 @@
 import type { ErrorResponse } from "@/types";
 import axios, { AxiosError, type InternalAxiosRequestConfig } from "axios";
-import { toast } from "sonner";
 import { router } from "@/router";
 import { useUserStore } from "@/store/userData";
 
