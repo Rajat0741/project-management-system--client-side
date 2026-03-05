@@ -143,7 +143,7 @@ function TaskItem({ task, projectId, isAdmin }: TaskItemProps) {
           <div className="flex items-center gap-3 w-full">
             <CollapsibleTrigger
               render={
-                <Button variant="ghost" size="icon-xs" className="shrink-0">
+                <Button variant="ghost" size="icon-xs" className="shrink-0 bg-primary/10 hover:bg-primary/20">
                   {isExpanded ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
                 </Button>
               }
