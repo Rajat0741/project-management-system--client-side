@@ -31,7 +31,6 @@ apiClient.interceptors.response.use(
         await apiClient.post("/auth/refresh-token");
         return apiClient(originalRequest);
       } catch (refreshError) {
-        toast.error("Session expired, please login again.");
         router.navigate({ to: "/login" });
         clearUserData();
         return Promise.reject(refreshError);
