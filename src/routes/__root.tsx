@@ -8,6 +8,7 @@ import Header from "@/components/shared/Header";
 import { DotBackground } from "@/components/ui/DotBackground";
 import ErrorPage from "@/components/shared/ErrorPage";
 import NotFoundPage from "@/components/shared/NotFoundPage";
+import { ColdStartLoader } from "@/components/shared/ColdStartLoader";
 
 // Extend AuthState to include queryClient
 interface RouterContext extends AuthState {
@@ -38,19 +39,21 @@ const RootLayout = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class">
-        <div className="min-h-screen flex flex-col">
-          {!isIndexPage && <Header />}
-          {isIndexPage ? (
-            <div className="flex flex-col items-center flex-1">
-              <Outlet />
-            </div>
-          ) : (
-            <DotBackground className="flex-1">
-              <Outlet />
-            </DotBackground>
-          )}
-          <Toaster />
-        </div>
+        <ColdStartLoader>
+          <div className="min-h-screen flex flex-col">
+            {!isIndexPage && <Header />}
+            {isIndexPage ? (
+              <div className="flex flex-col items-center flex-1">
+                <Outlet />
+              </div>
+            ) : (
+              <DotBackground className="flex-1">
+                <Outlet />
+              </DotBackground>
+            )}
+            <Toaster />
+          </div>
+        </ColdStartLoader>
       </ThemeProvider>
     </QueryClientProvider>
   );

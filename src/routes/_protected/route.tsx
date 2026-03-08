@@ -1,5 +1,4 @@
 import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
-import { ColdStartLoader } from "@/components/shared/ColdStartLoader";
 
 export const Route = createFileRoute("/_protected")({
   component: RouteComponent,
@@ -15,9 +14,7 @@ export const Route = createFileRoute("/_protected")({
 function RouteComponent() {
   return (
     <div className="w-full h-full">
-      <ColdStartLoader>
-        <Outlet />
-      </ColdStartLoader>
+      <Outlet />
     </div>
   );
 }
