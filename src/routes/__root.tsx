@@ -39,21 +39,21 @@ const RootLayout = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class">
-        <ColdStartLoader>
-          <div className="min-h-screen flex flex-col">
-            {!isIndexPage && <Header />}
-            {isIndexPage ? (
-              <div className="flex flex-col items-center flex-1">
+        <div className="min-h-screen flex flex-col">
+          {!isIndexPage && <Header />}
+          {isIndexPage ? (
+            <div className="flex flex-col items-center flex-1">
+              <Outlet />
+            </div>
+          ) : (
+            <DotBackground className="flex-1">
+              <ColdStartLoader>
                 <Outlet />
-              </div>
-            ) : (
-              <DotBackground className="flex-1">
-                <Outlet />
-              </DotBackground>
-            )}
-            <Toaster />
-          </div>
-        </ColdStartLoader>
+              </ColdStartLoader>
+            </DotBackground>
+          )}
+          <Toaster />
+        </div>
       </ThemeProvider>
     </QueryClientProvider>
   );
