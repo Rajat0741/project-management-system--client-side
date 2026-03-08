@@ -63,9 +63,5 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       <ErrorPage error={error} reset={reset} />
     </RootShell>
   ),
-  notFoundComponent: () => (
-    <RootShell>
-      <NotFoundPage />
-    </RootShell>
-  ),
+  notFoundComponent: () => <NotFoundPage />,
 });

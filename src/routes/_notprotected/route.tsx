@@ -1,5 +1,5 @@
 import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
-import { useColdStartToast } from "@/hooks/useColdStartToast";
+import { ColdStartLoader } from "@/components/shared/ColdStartLoader";
 
 export const Route = createFileRoute("/_notprotected")({
   component: RouteComponent,
@@ -13,11 +13,11 @@ export const Route = createFileRoute("/_notprotected")({
 });
 
 function RouteComponent() {
-  useColdStartToast();
-
   return (
-    <div className="flex w-full h-full items-center justify-center min-h-screen">
-      <Outlet />
+    <div className="flex flex-col w-full h-full items-center justify-center min-h-screen">
+      <ColdStartLoader>
+        <Outlet />
+      </ColdStartLoader>
     </div>
   );
 }
