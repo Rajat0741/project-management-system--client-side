@@ -141,7 +141,10 @@ export interface TaskAssigner {
   _id: string;
   username: string;
   fullName: string;
-  avatar: string;
+  avatar: {
+    url: string;
+    fileId: string;
+  };
 }
 
 export interface Task {
