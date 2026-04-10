@@ -138,7 +138,9 @@ function TaskItem({ task, projectId, isAdmin }: TaskItemProps) {
   return (
     <>
       <Collapsible open={isExpanded} onOpenChange={setIsExpanded}>
-        <Item variant="outline" className="flex-col items-stretch ">
+        <Item 
+          variant="outline" 
+          className="flex-col items-stretch transition-colors bg-accent/40 shadow-sm">
           {/* Task Header Row */}
           <div className="flex items-center gap-3 w-full">
             <CollapsibleTrigger
@@ -187,7 +189,7 @@ function TaskItem({ task, projectId, isAdmin }: TaskItemProps) {
 
           {/* Expanded Content */}
           <CollapsibleContent>
-            <div className="pt-3 mt-3 border-t space-y-4">
+            <div className="pt-4 mt-2 border-t border-muted-foreground/10 space-y-6">
               {isLoadingDetails ? (
                 <div className="flex justify-center py-4">
                   <Spinner />
@@ -286,27 +288,22 @@ function TaskDetails({ projectId, task, isAdmin }: TaskDetailsProps) {
 
   return (
     <div className="space-y-4">
-      {/* Description */}
-      {task.description && (
-        <div>
-          <p className="text-xs font-medium text-muted-foreground mb-1">Description</p>
-          <p className="text-sm">{task.description}</p>
-        </div>
-      )}
-
       {/* Subtasks */}
       {hasSubtasks && (
         <div>
-          <p className="text-xs font-medium text-muted-foreground mb-2">
+          <p className="text-xs font-semibold tracking-wide uppercase text-muted-foreground mb-3">
             Subtasks ({task.subtasks?.filter((s) => s.isCompleted).length}/{task.subtasks?.length})
           </p>
-          <ItemGroup className="gap-1">
+          <ItemGroup className="gap-2">
             {task.subtasks?.map((subtask) => (
               <Item
                 key={subtask._id}
                 size="xs"
-                variant="muted"
-                className={cn("items-center", subtask.isCompleted && "opacity-50")}
+                variant="outline"
+                className={cn(
+                  "items-center bg-background/80 shadow-sm border-muted-foreground/20",
+                  subtask.isCompleted && "opacity-50"
+                )}
               >
                 <ItemMedia
                   variant="icon"
@@ -368,18 +365,23 @@ function TaskDetails({ projectId, task, isAdmin }: TaskDetailsProps) {
         </div>
       )}
 
-      {hasAttachments && hasSubtasks && <Separator />}
+      {hasAttachments && hasSubtasks && <Separator className="bg-muted-foreground/15 my-6" />}
 
       {/* Attachments */}
       {hasAttachments && (
-        <div>
-          <div className="flex items-center justify-between mb-2">
-            <p className="text-xs font-medium text-muted-foreground">Attachments ({task.attachments.length})</p>
+        <div className="pt-2">
+          <div className="flex items-center justify-between mb-3">
+            <p className="text-xs font-semibold tracking-wide uppercase text-muted-foreground">Attachments ({task.attachments.length})</p>
             <DownloadAttachmentsButton attachments={task.attachments} fileName={`${task.title}-attachments`} />
           </div>
-          <ItemGroup className="gap-1">
+          <ItemGroup className="gap-2">
             {task.attachments.map((att, i) => (
-              <Item key={i} size="xs" variant="muted" className="items-center">
+              <Item 
+                key={i} 
+                size="xs" 
+                variant="outline" 
+                className="items-center bg-background/80 shadow-sm border-muted-foreground/20 hover:bg-background transition-colors"
+              >
                 <ItemMedia variant="icon" className="self-center! translate-y-0!">{getFileIcon(att.url)}</ItemMedia>
                 <ItemContent>
                   <ItemTitle>{getFilename(att.url)}</ItemTitle>
