@@ -30,7 +30,7 @@ function SuccessfullyVerified() {
   }, [navigate]);
 
   return (
-    <Card className="w-full max-w-md">
+    <Card className="w-full max-w-md bg-white dark:bg-neutral-900 bg-gradient-card">
       <CardHeader className="text-center pb-4">
         <div className="mx-auto mb-4 flex size-20 items-center justify-center rounded-full bg-green-100 dark:bg-green-950">
           <CheckCircle2 className="size-10 text-green-600 dark:text-green-400" />
@@ -52,7 +52,7 @@ function SuccessfullyVerified() {
 // Pending Component - Verifying in Progress
 function Verifying() {
   return (
-    <Card className="w-full max-w-md bg-linear-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5">
+    <Card className="w-full max-w-md bg-white dark:bg-neutral-900 bg-gradient-card">
       <CardHeader className="text-center pb-4">
         <div className="mx-auto mb-4 flex size-20 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950">
           <Loader2 className="size-10 text-blue-600 dark:text-blue-400 animate-spin" />
@@ -76,7 +76,7 @@ function InvalidOrExpiredToken({ error }: { error: any }) {
   const errorMessage = error?.message || error?.data?.message || "Invalid or expired verification token";
 
   return (
-    <Card className="w-full max-w-md border-destructive/50 bg-linear-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5">
+    <Card className="w-full max-w-md border-destructive/50 bg-white dark:bg-neutral-900 bg-gradient-card">
       <CardHeader className="text-center pb-4">
         <div className="mx-auto mb-4 flex size-20 items-center justify-center rounded-full bg-red-100 dark:bg-red-950">
           <XCircle className="size-10 text-red-600 dark:text-red-400" />

@@ -27,7 +27,7 @@ export default function RegisterForm({ className, ...props }: React.ComponentPro
 
   return (
     <div className={cn("flex flex-col gap-6 w-full max-w-2xl", className)} {...props}>
-      <Card className="bg-linear-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5">
+      <Card className="bg-white dark:bg-neutral-900 bg-gradient-card">
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Create your account</CardTitle>
           <CardDescription>Enter your details below to create your account</CardDescription>

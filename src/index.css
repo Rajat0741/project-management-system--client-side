@@ -38,6 +38,7 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    --my-card-gradient: linear-gradient(to bottom right, oklch(1 0 0) 0%, oklch(0.205 0 0 / 15%) 100%);
 }
 
 .dark {
@@ -48,6 +49,7 @@
     --popover: oklch(0.205 0 0);
     --popover-foreground: oklch(0.985 0 0);
     --primary: oklch(0.87 0.00 0);
+    --my-card-gradient: linear-gradient(to bottom right, oklch(0.205 0 0) 0%, oklch(0.87 0 0 / 15%) 100%);
     --primary-foreground: oklch(0.205 0 0);
     --secondary: oklch(0.269 0 0);
     --secondary-foreground: oklch(0.985 0 0);
@@ -114,6 +116,7 @@
     --radius-2xl: calc(var(--radius) + 8px);
     --radius-3xl: calc(var(--radius) + 12px);
     --radius-4xl: calc(var(--radius) + 16px);
+    --background-image-gradient-card: var(--my-card-gradient);
 }
 
 @layer base {
