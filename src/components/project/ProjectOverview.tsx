@@ -67,7 +67,7 @@ function ProjectInfoSection({ project, isAdmin }: ProjectInfoSectionProps) {
   };
 
   return (
-    <Card className="bg-white dark:bg-neutral-900 bg-gradient-card">
+    <Card className="bg-white dark:bg-neutral-900">
       <CardHeader className="flex flex-row items-center justify-between space-y-1">
         <div className="space-y-1">
           <CardTitle>Project Information</CardTitle>
@@ -152,7 +152,7 @@ function ProjectStatsSection({ projectId, project }: ProjectStatsSectionProps) {
   };
 
   return (
-    <Card className="bg-white dark:bg-neutral-900 bg-gradient-card">
+    <Card className="bg-white dark:bg-neutral-900">
       <CardHeader>
         <CardTitle>Project Stats</CardTitle>
       </CardHeader>
@@ -217,7 +217,7 @@ function ProjectStatsSection({ projectId, project }: ProjectStatsSectionProps) {
 
 function StatsSkeleton() {
   return (
-    <Card className="h-full bg-white dark:bg-neutral-900 bg-gradient-card">
+    <Card className="h-full bg-white dark:bg-neutral-900">
       <CardHeader>
         <CardTitle>Project Stats</CardTitle>
       </CardHeader>

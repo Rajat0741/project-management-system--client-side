@@ -122,7 +122,7 @@ export function ProjectDashboard({ projects = [] }: ProjectDashboardProps) {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center py-16 text-center bg-white dark:bg-transparent outline rounded-2xl bg-gradient-card">
+        <div className="flex flex-col items-center justify-center py-16 text-center bg-white dark:bg-transparent outline rounded-2xl">
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 mb-4">
             <FolderOpen className="h-8 w-8 text-slate-400" />
           </div>
