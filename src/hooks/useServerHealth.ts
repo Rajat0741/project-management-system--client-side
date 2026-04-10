@@ -16,9 +16,7 @@ export function serverHealthQueryOptions() {
       return res.json();
     },
     retry: Infinity,
-    retryDelay: 5000,
-    refetchInterval: 600000, // 10 minutes
+    retryDelay: 5000, // 10 minutes
     refetchOnWindowFocus: false,
-    staleTime: 600000,
   });
 }
