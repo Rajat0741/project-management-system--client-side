@@ -9,7 +9,7 @@ export const Route = createFileRoute("/_notprotected/_message/forgotpasswordEmai
 
 function RouteComponent() {
   return (
-    <Card className="w-full max-w-md">
+    <Card className="w-full max-w-md bg-linear-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5">
       <CardHeader className="text-center pb-4">
         <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-primary/10">
           <MailCheck className="size-8 text-primary" />

@@ -27,7 +27,7 @@ export function LoginForm() {
 
   return (
     <div className={cn("flex flex-col gap-6")}>
-      <Card>
+      <Card className="bg-linear-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5">
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Welcome back</CardTitle>
           <CardDescription>Login to your account</CardDescription>
@@ -37,7 +37,7 @@ export function LoginForm() {
             <FieldGroup>
               <Field data-invalid={!!errors.email}>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
-                <Input id="email" type="email" placeholder="m@example.com" required {...register("email")} />
+                <Input id="email" type="email" placeholder="m@example.com" required className="border-foreground/30" {...register("email")} />
                 <FieldError errors={errors.email ? [errors.email] : []} />
               </Field>
               <Field data-invalid={!!errors.password}>
@@ -47,7 +47,7 @@ export function LoginForm() {
                     Forgot your password?
                   </Link>
                 </div>
-                <Input id="password" type="password" required {...register("password")} />
+                <Input id="password" type="password" required className="border-foreground/30" {...register("password")} />
                 <FieldError errors={errors.password ? [errors.password] : []} />
               </Field>
               <Field>

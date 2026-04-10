@@ -27,7 +27,7 @@ export default function RegisterForm({ className, ...props }: React.ComponentPro
 
   return (
     <div className={cn("flex flex-col gap-6 w-full max-w-2xl", className)} {...props}>
-      <Card>
+      <Card className="bg-linear-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5">
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Create your account</CardTitle>
           <CardDescription>Enter your details below to create your account</CardDescription>
@@ -38,23 +38,23 @@ export default function RegisterForm({ className, ...props }: React.ComponentPro
               <div className="grid grid-cols-2 gap-4">
                 <Field data-invalid={!!errors.fullName}>
                   <FieldLabel htmlFor="fullName">Full Name</FieldLabel>
-                  <Input id="fullName" type="text" placeholder="John Doe" {...register("fullName")} />
+                  <Input id="fullName" type="text" placeholder="John Doe" className="border-foreground/30" {...register("fullName")} />
                   <FieldError errors={errors.fullName ? [errors.fullName] : []} />
                 </Field>
                 <Field data-invalid={!!errors.username}>
                   <FieldLabel htmlFor="username">Username</FieldLabel>
-                  <Input id="username" type="text" placeholder="johndoe" {...register("username")} />
+                  <Input id="username" type="text" placeholder="johndoe" className="border-foreground/30" {...register("username")} />
                   <FieldError errors={errors.username ? [errors.username] : []} />
                 </Field>
               </div>
               <Field data-invalid={!!errors.email}>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
-                <Input id="email" type="email" placeholder="m@example.com" {...register("email")} />
+                <Input id="email" type="email" placeholder="m@example.com" className="border-foreground/30" {...register("email")} />
                 <FieldError errors={errors.email ? [errors.email] : []} />
               </Field>
               <Field data-invalid={!!errors.password}>
                 <FieldLabel htmlFor="password">Password</FieldLabel>
-                <Input id="password" type="password" {...register("password")} />
+                <Input id="password" type="password" className="border-foreground/30" {...register("password")} />
                 <FieldError errors={errors.password ? [errors.password] : []} />
                 <FieldDescription>Must be at least 8 characters long.</FieldDescription>
               </Field>

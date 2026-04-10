@@ -28,7 +28,7 @@ export default function ResendVerificationForm({ className, ...props }: React.Co
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card>
+      <Card className="bg-linear-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5">
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Resend Verification Email</CardTitle>
           <CardDescription>Enter your email to receive a new verification link</CardDescription>
@@ -38,7 +38,7 @@ export default function ResendVerificationForm({ className, ...props }: React.Co
             <FieldGroup>
               <Field data-invalid={!!errors.email}>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
-                <Input id="email" type="email" placeholder="m@example.com" required {...register("email")} />
+                <Input id="email" type="email" placeholder="m@example.com" required className="border-foreground/30" {...register("email")} />
                 <FieldError errors={errors.email ? [errors.email] : []} />
               </Field>
               <Field>
