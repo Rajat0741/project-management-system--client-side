@@ -62,8 +62,11 @@ export function AssignTaskDialog({ isOpen, onClose, projectId, assignToMember }:
   };
 
   const onSubmit = (data: CreateTaskData) => {
+    // Manually ensure assignedTo is included since it isn't an input field in the form
+    const submissionData = { ...data, assignedTo: assignToMember.user._id };
+
     createTask.mutate(
-      { ...data, attachments },
+      { ...submissionData, attachments },
       {
         onSuccess: () => {
           reset();
