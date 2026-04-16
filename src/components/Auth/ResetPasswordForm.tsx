@@ -65,7 +65,7 @@ export default function ResetPasswordForm({ resetToken }: ResetPasswordFormProps
   }
 
   return (
-    <div className="flex flex-col gap-6 w-full">
+    <div className="flex flex-col gap-6 min-w-sm md:min-w-lg">
       <Card className="w-full max-w-md mx-auto bg-white dark:bg-neutral-900 bg-gradient-card">
         <CardHeader className="text-center pb-4">
           <div className="mx-auto mb-4 flex size-20 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950">
