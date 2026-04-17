@@ -45,7 +45,7 @@ export default function ResetPasswordForm({ resetToken }: ResetPasswordFormProps
 
   if (isSuccess) {
     return (
-      <Card className="w-full max-w-lg bg-white dark:bg-neutral-900 bg-gradient-card">
+      <Card className="w-full max-w-lg">
         <CardHeader className="text-center pb-4">
           <div className="mx-auto mb-4 flex size-20 items-center justify-center rounded-full bg-green-100 dark:bg-green-950">
             <CheckCircle2 className="size-10 text-green-600 dark:text-green-400" />
@@ -65,8 +65,7 @@ export default function ResetPasswordForm({ resetToken }: ResetPasswordFormProps
   }
 
   return (
-    <div className="flex flex-col gap-6 min-w-sm md:min-w-lg">
-      <Card className="w-full max-w-md mx-auto bg-white dark:bg-neutral-900 bg-gradient-card">
+      <Card className="min-w-sm md:min-w-lg mx-auto">
         <CardHeader className="text-center pb-4">
           <div className="mx-auto mb-4 flex size-20 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950">
             <KeyRound className="size-10 text-blue-600 dark:text-blue-400" />
@@ -89,6 +88,5 @@ export default function ResetPasswordForm({ resetToken }: ResetPasswordFormProps
           </form>
         </CardContent>
       </Card>
-    </div>
   );
 }

@@ -27,7 +27,7 @@ export function LoginForm() {
 
   return (
     <div className={cn("flex flex-col gap-6")}>
-      <Card className="bg-white dark:bg-neutral-900 bg-gradient-card">
+      <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Welcome back</CardTitle>
           <CardDescription>Login to your account</CardDescription>

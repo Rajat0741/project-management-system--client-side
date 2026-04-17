@@ -33,7 +33,7 @@ function ProfilePage() {
     <div className="container max-w-2xl mx-auto py-8 px-4">
       <div className="space-y-6">
         {/* Profile Header */}
-        <Card className="border-none shadow-lg bg-linear-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5">
+        <Card className="border-none shadow-lg">
           <CardContent className="pt-8 pb-6">
             <ProfileAvatar avatarUrl={userData.avatar?.url} fullName={userData.fullName} username={userData.username} />
           </CardContent>

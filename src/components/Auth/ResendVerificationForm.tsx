@@ -28,7 +28,7 @@ export default function ResendVerificationForm({ className, ...props }: React.Co
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card className="bg-white dark:bg-neutral-900 bg-gradient-card">
+      <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Resend Verification Email</CardTitle>
           <CardDescription>Enter your email to receive a new verification link</CardDescription>
