@@ -326,7 +326,7 @@ function TaskDetails({ projectId, task, isAdmin }: TaskDetailsProps) {
           </div>
         </>
       )}
-``````````````````````````````````````````````````````````````````````````````````````````````````````````
+
       {hasAttachments && (
         <>
           {(task.description || hasSubtasks) && <Separator className="bg-muted-foreground/15" />}
